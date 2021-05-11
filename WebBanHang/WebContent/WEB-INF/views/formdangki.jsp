@@ -13,10 +13,8 @@
 <!-- Đường dẫn file.css -->
 <link rel="stylesheet" href="<c:url value= "resource/css/style.css"> </c:url>" />
 
-<!-- Đường dẫn tới file css của bootstrap 4-->
 <link rel="stylesheet"
 	href="<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"></c:url>">
-<!--Đường dẫn tới js của bootstrap 4-->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script

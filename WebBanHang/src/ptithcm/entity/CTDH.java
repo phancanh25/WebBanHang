@@ -67,6 +67,8 @@ public class CTDH {
 	public CTDH() {
 		
 	}
+	
+	//cmt
 	public CTDH(Integer sp_ID,Integer soLuong) {
 		this.sp_ID=sp_ID;
 		this.soLuong=soLuong;

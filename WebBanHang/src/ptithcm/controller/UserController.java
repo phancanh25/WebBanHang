@@ -394,7 +394,7 @@ public class UserController {
 	{
 
 		boolean check = true;
-		// kiểm tra định dạng email : thuan@gmail.com.vn 
+		// kiểm tra định dạng email : toicanh25@gmail.com.vn 
 		if(to.trim().isEmpty()) {
 			check = false;
 			model.addAttribute("LoiDinhDangEmail","Email không được để trống"); 
@@ -415,7 +415,7 @@ public class UserController {
 					//return "redirect:/user/signin.htm";
 				}
 				else {
-					String from = "mailtext143@gmail.com";			
+					String from = "toicanh25@gmail.com";			
 					String subject="FOOD DAY - Quên mật khẩu";
 					String body="Mật khẩu của bạn là "+matKhau;
 					MimeMessage mail = mailer.createMimeMessage();
@@ -441,8 +441,8 @@ public class UserController {
 	@ModelAttribute("soSanPham")
 	public int laySoLuongSanPham() {
 		int tong = 0;
-		for (Integer ii : TruyVan.dsMaSanPham.values()) {
-			tong+=ii;
+		for (Integer m : TruyVan.dsMaSanPham.values()) {
+			tong+=m;
 		}
 		return tong;
 	}

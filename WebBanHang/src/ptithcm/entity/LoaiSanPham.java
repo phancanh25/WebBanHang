@@ -56,8 +56,4 @@ public class LoaiSanPham {
 		this.id = id;
 		this.tenLoai =ten;
 	}
-
-	
-	
-	
 }
