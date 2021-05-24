@@ -259,12 +259,13 @@ public class UserController {
 			//kiểm tra sự tồn tại của email trong cơ sở dữ liêu 
 			Session session = factory.getCurrentSession();
 			String hql = "FROM User u where u.email = :e and u.matKhau = :m";
-			String hql1 = "FROM Admin WHERE email =:email";
+			String hql1 = "FROM Admin a WHERE a.email =:aemail and a.matKhau = :pemail";
 			Query query = session.createQuery(hql);
 			Query query1 = session.createQuery(hql1);
 			query.setParameter("e", user.getEmail());
 			query.setParameter("m", user.getMatKhau());
-			query1.setParameter("email",user.getEmail() );
+			query1.setParameter("aemail",user.getEmail() );
+			query1.setParameter("pemail",user.getMatKhau() );
 			User user1 = (User)query.uniqueResult(); 
 			Admin ad =(Admin)query1.uniqueResult();
 			if(!(user1==null)) {
