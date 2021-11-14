@@ -91,31 +91,4 @@ public class DonHangController {
 		}
 		return "redirect:/donhang.htm";
 	}
-//	  @ModelAttribute("dsDonHang") 
-//	  public List<DonHang> dsDonHang()
-//	  { 
-//		  Session s = factory.getCurrentSession();
-//		  String hql = "FROM DonHang";
-//		  Query q= s.createQuery(hql);		  
-//		  List<DonHang> dsDonHang = q.list();
-//		return dsDonHang; 
-//	  }
-//	  @ModelAttribute("dsSanPham") 
-//	  public List<SanPham> dsSanPham(@PathVariable("idDonHang")int idDonHang)
-//	  { 
-//		  
-//		  Session s = factory.getCurrentSession();
-//		  String hql = "FROM CTDH WHERE dh_ID = :idDonHang";
-//		  Query q= s.createQuery(hql);
-//		  q.setParameter("idDonHang",idDonHang);
-//		  List<CTDH> dsCTDH = q.list();
-//		  List<SanPham> dsSanPham = new ArrayList<SanPham>();
-//		  for (CTDH ctdh : dsCTDH) {
-//			  hql="FROM SanPham WHERE id =:idSP";
-//			  q=s.createQuery(hql);
-//			  q.setParameter("idSP",ctdh.getSp_ID());
-//			  dsSanPham.add((SanPham)q.uniqueResult());
-//		  }		
-//		return dsSanPham; 
-//	  }
 }

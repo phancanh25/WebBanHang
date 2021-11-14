@@ -9,14 +9,9 @@
 	<base href="${pageContext.servletContext.contextPath}/"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!--Đường dẫn icon-->
   	<link rel="stylesheet" href= "<c:url value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></c:url>">
-  	<!-- Đường dẫn file.css -->
   	<link rel="stylesheet" href="<c:url value= "resource/css/style.css"> </c:url>"/>
-
-	<!-- Đường dẫn tới file css của bootstrap 4-->
   	<link rel="stylesheet" href= "<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"></c:url>">
-  	 <!--Đường dẫn tới js của bootstrap 4-->	
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   
@@ -147,7 +142,7 @@
 			              <div class="product-top">
 				                <img src="resource/img/${u.hinhAnh}" alt="" >
 				                <div class="overlay-right">
-					                  <button type="button" class="btn btn-secondary" title="Qhick short">
+					                  <button type="button" class="btn btn-secondary" title="Quick short">
 					                    	<i class="fa fa-eye "></i>
 					                  </button>
 					                  <button type="button" class="btn btn-secondary " title="Add to Wishlist">
@@ -230,7 +225,6 @@
 			                    	<i class="fa fa-heart-o"></i>
 			                  </button>
 			                  <button type="button" class="btn btn-secondary" title="Add to Cart">
-
 			                    	<a href="./dathang/${u.id}.htm?btn-dat"><i class="fa fa-shopping-cart"></i>  </a>
 			                  </button>
 		               	</div>

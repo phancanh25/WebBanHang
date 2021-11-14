@@ -52,8 +52,6 @@ public class DatHangController {
 		}
 		if(trong)
 			TruyVan.dsMaSanPham.put(id,1);
-		
-		
 		return"redirect:/user/index.htm#thanhtoan";
 	}
 	
@@ -171,14 +169,6 @@ public class DatHangController {
 		return "redirect:/user/index.htm";
 	}
 	
-	
 
-	//	@ModelAttribute("tongTien")
-//	public double tongTien() {
-//		for (iterable_type iterable_element : TruyVan.getDsMaSanPham()) {
-//			
-//		}
-//		
-//	}
 	
 }

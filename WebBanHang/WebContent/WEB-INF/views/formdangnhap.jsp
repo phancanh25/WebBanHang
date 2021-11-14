@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="<c:url value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></c:url>">
 <!-- Đường dẫn file.css -->
 <link rel="stylesheet" href="<c:url value= "resource/css/style.css"> </c:url>" />
-
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <!-- Đường dẫn tới file css của bootstrap 4-->
 <link rel="stylesheet"
 	href="<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"></c:url>">
@@ -72,6 +72,15 @@
 				<f:input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu" path="matKhau"/>
 				<span style="color: red">${LoiDinhDangMatKhau}</span>
 			</div>
+			<div class="g-recaptcha"
+			data-sitekey="6LdrS-scAAAAAB1UDkOpYwtVVMNdajeCqpEM068i"></div>
+			
+			<label class="mb-1">
+				<h6 class="mb-0 text-sm">
+						
+					${reCaptra}
+				</h6>
+			</label>
 			<a href="./user/quenmatkhau.htm">Quên mật khẩu</a>
 			<div><span style="color: red">${message}</span> </div>			
 			<f:button type="submit" class="btn btn-primary"> Đăng nhập</f:button>

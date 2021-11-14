@@ -38,12 +38,19 @@ public class User {
 	@Column(name = "password")
 	private String matKhau;
 	
-	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	@Column(name = "created")
 	private Date ngayTao;
 	
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
+	@Column(name = "token")
+	private String token;
 	
 	public Integer getId() {
 		return id;
@@ -87,5 +94,4 @@ public class User {
 	public void setNgayTao(Date ngayTao) {
 		this.ngayTao = ngayTao;
 	}
-	
 }

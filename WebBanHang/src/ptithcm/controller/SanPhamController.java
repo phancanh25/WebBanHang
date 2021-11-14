@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import other.Check;
 import ptithcm.bean.UserNow;
 import ptithcm.entity.LoaiSanPham;
 import ptithcm.entity.SanPham;
@@ -48,13 +49,8 @@ public class SanPhamController {
 	public String insert(@ModelAttribute("sanpham")SanPham sp,@RequestParam("photo")MultipartFile image,ModelMap model) {
 		Session session = factory.openSession();
 		Transaction tr = session.beginTransaction();
-		
-		
 		String tenHinhAnh = image.getOriginalFilename();			
 		String path = context.getRealPath("resource/img/"+image.getOriginalFilename());					
-
-		
-		
 		// kiem tra su ton tai cua san pham 
 		String hql = "FROM SanPham WHERE id = :ten";
 		Query q  = session.createQuery(hql);
@@ -62,11 +58,21 @@ public class SanPhamController {
 		SanPham sp1= (SanPham)q.uniqueResult();		
 		// nếu sản phẩm chưa tồn tại thì thêm mới
 		if(sp1==null) {
+			Check check = new Check();
+			if (check.checkRegrex(sp.getTenSP())) {
+				model.addAttribute("message","Cập nhật sản phẩm thất bại vì XSS");
+				return "formcapnhatsanpham";
+			}
+			if (check.checkRegrex(sp.getMoTa())) {
+				model.addAttribute("message","Cập nhật sản phẩm thất bại vì XSS");
+				return "formcapnhatsanpham";
+			}
 			// nếu chưa có file thì thêm
 			if(image.isEmpty()) {
 				model.addAttribute("message","Vui lòng thêm file");
 				return "formcapnhatsanpham";
 			}
+			
 			else {
 				try {
 					image.transferTo(new File(path));	
@@ -94,6 +100,15 @@ public class SanPhamController {
 					f.delete();
 					image.transferTo(new File(path));			
 					sp1.setHinhAnh(tenHinhAnh);
+				}
+				Check check = new Check();
+				if (check.checkRegrex(sp.getTenSP())) {
+					model.addAttribute("message","Cập nhật sản phẩm thất bại");
+					return "formcapnhatsanpham";
+				}
+				if (check.checkRegrex(sp.getMoTa())) {
+					model.addAttribute("message","Cập nhật sản phẩm thất bại vì XSS");
+					return "formcapnhatsanpham";
 				}
 				sp1.setTenSP(sp.getTenSP());
 				sp1.setLoaiSanPham(sp.getLoaiSanPham());
